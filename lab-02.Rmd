@@ -1,14 +1,15 @@
 ---
 title: "Lab 02 - Plastic waste"
-author: "Votre nom"
-date: "La date"
+author: "Coralie Morin"
+date: "15 septembre 2025"
 output: github_document
 ---
 
 ## Chargement des packages et des données
 
 ```{r load-packages, message=FALSE}
-library(tidyverse) 
+library(tidyverse)
+
 ```
 
 ```{r load-data, message=FALSE}
@@ -28,7 +29,7 @@ plastic_waste <- plastic_waste %>%
 ### Exercise 1
 
 ```{r plastic-waste-continent}
-# insert code here
+ggplot(plastic_waste,aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth = 0.2) + facet_wrap( ~ continent )
 ```
 
 ### Exercise 2
