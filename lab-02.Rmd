@@ -35,7 +35,8 @@ ggplot(plastic_waste,aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth =
 ### Exercise 2
 
 ```{r plastic-waste-density}
-# insert code here
+ ggplot(plastic_waste,aes(x = plastic_waste_per_cap))+ geom_density ()
+
 ```
 
 Réponse à la question...
