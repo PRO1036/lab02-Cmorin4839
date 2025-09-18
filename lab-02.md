@@ -34,7 +34,7 @@ ggplot(plastic_waste,aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth =
 ### Exercise 2
 
 ``` r
- ggplot(plastic_waste,aes(x = plastic_waste_per_cap))+ geom_density ()
+ ggplot(plastic_waste,aes(x = plastic_waste_per_cap, colour=continent, fill=continent))+ geom_density (alpha=0.4)
 ```
 
 ![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
