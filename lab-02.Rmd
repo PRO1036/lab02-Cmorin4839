@@ -73,11 +73,11 @@ En général, plus il y a de déchets émis par les habitants, plus la quantité
 
 
 ```{r plastic-waste-population-total}
-# insert code here
+ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=total_pop)) +  geom_point()
 ```
 
 ```{r plastic-waste-population-coastal}
-# insert code here
+ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=coastal_pop)) +  geom_point()
 ```
 
 Réponse à la question...
