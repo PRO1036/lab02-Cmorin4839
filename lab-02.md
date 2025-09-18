@@ -71,10 +71,18 @@ sont plus précis qu’un simple boxplot.
 ### Exercise 4
 
 ``` r
-# insert code here
+ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=mismanaged_plastic_waste_per_cap, color=continent)) +  geom_point()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-mismanaged-1.png)<!-- -->
+
+En général, plus il y a de déchets émis par les habitants, plus la
+quantité de déchets non gérés augmente. Toutefois, certains continents
+tel que l’Europe sont capables de bien gérer leurs déchets, malgré
+qu’ils en ont beaucoup. Pour finir, certains continents ne varient pas
+selon une tendance, les points sont n’importe où sur le graphique ce qui
+nous pousse à croire que certains pays gèrent très bien leurs déchets
+tandis que d’autres n’ont aucun controle.
 
 ### Exercise 5
 
