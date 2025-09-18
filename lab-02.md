@@ -39,23 +39,34 @@ ggplot(plastic_waste,aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth =
 
 ![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
 
-Réponse à la question…
+Le réglage de la couleur (color et fill) se retrouve dans aes\_
+puisqu’il est relié avec une variable qui est dans ce cas, les
+continents. Cependant, la transparence (alpha) est dans geom_density,
+puisqu’elle n’est pas reliée aux variables et s’applique pour toute le
+graphique.
 
 ### Exercise 3
 
 Boxplot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y=plastic_waste_per_cap)) +
+  geom_boxplot()
 ```
+
+![](lab-02_files/figure-gfm/plastic-waste-boxplot-1.png)<!-- -->
 
 Violin plot:
 
 ``` r
-# insert code here
+ggplot(plastic_waste, aes(x = continent, y=plastic_waste_per_cap)) +
+  geom_violin()
 ```
 
-Réponse à la question…
+![](lab-02_files/figure-gfm/plastic-waste-violin-1.png)<!-- -->
+
+Les violin plots permettent de mieux voir la distribution des données et
+sont plus précis qu’un simple boxplot.
 
 ### Exercise 4
 
