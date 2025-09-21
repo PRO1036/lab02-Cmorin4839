@@ -101,12 +101,29 @@ ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=coastal_pop)) +  geom_point(
 
 ![](lab-02_files/figure-gfm/plastic-waste-population-coastal-1.png)<!-- -->
 
-Réponse à la question…
+Il semble y avoir une relation plus forte entre la quantité de déchets
+plastiques par habitant et le nombre total d’habitants, puisque les
+points sont plus rapprochés et semblent suivre une certaine tendance.
 
 ## Conclusion
 
 Recréez la visualisation:
 
 ``` r
-# insert code here
+plastic_waste_coastal <- plastic_waste %>% 
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
+  filter(plastic_waste_per_cap < 3)
+
+ggplot(plastic_waste, aes(x=coastal_pop / total_pop, y=plastic_waste_per_cap, color=continent)) +geom_point() +labs(title = "Quantité de déchets plastiques vs proportion de la population côtière ",
+       subtitle = "Selon le continent",
+       x = "Proportion de la population côtière (Coastal/ total population)", y = "Nombre de déchets plastiques par habitant")
 ```
+
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->
+
+\`\`\`
+
+Rép:
