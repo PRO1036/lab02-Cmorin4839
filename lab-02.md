@@ -149,4 +149,12 @@ ggplot(plastic_waste, aes(x=coastal_pop / total_pop, y=plastic_waste_per_cap, co
 
 ![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->
 
-Rép:
+Interprétation du graphe:
+
+La relation entre le nombre de personne qui habite sur les côtes et le
+nombre de déchets plastiques est faible. En effet, même si le nombre
+d’habitants augmente toujours, le nombre de déchets plastiques augmente
+lentement et est même presque constant pour certain continent. De plus,
+l’Afrique est majoritairement en dessous de la courbe donc, ce continent
+a moins de déchets plastiques que la moyenne contrairement à l’Amérique
+du Nord qui se situe légerement plus haut que la moyenne.
