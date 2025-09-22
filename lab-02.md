@@ -29,7 +29,10 @@ plastic_waste <- plastic_waste %>%
 ggplot(plastic_waste,aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth = 0.2) + facet_wrap( ~ continent )
 ```
 
-![](lab-02_files/figure-gfm/plastic-waste-continent-1.png)<!-- -->
+![](lab-02_files/figure-gfm/plastic-waste-continent-1.png)<!-- --> En
+comparant les continents selon leur quantité déchets plastiques, il est
+possible de constater que l’Amérique du Sud et l’Océanie sont les
+continents qui en possèdent le moins.
 
 ### Exercise 2
 
@@ -114,16 +117,22 @@ plastic_waste_coastal <- plastic_waste %>%
   mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
   filter(plastic_waste_per_cap < 3)
 
-ggplot(plastic_waste, aes(x=coastal_pop / total_pop, y=plastic_waste_per_cap, color=continent)) +geom_point() +labs(title = "Quantité de déchets plastiques vs proportion de la population côtière ",
+ggplot(plastic_waste, aes(x=coastal_pop / total_pop, y=plastic_waste_per_cap, color=continent)) +
+  geom_point() +
+  labs(title = "Quantité de déchets plastiques vs proportion de la population côtière ",
        subtitle = "Selon le continent",
-       x = "Proportion de la population côtière (Coastal/ total population)", y = "Nombre de déchets plastiques par habitant")
+       x = "Proportion de la population côtière (Coastal/ total population)", y = "Nombre de déchets plastiques par habitant") +
+  geom_smooth(color="black")
 ```
+
+    ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
+
+    ## Warning: Removed 10 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
 
     ## Warning: Removed 10 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
 ![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->
-
-\`\`\`
 
 Rép:
