@@ -28,14 +28,18 @@ plastic_waste <- plastic_waste %>%
 ### Exercise 1
 
 ```{r plastic-waste-continent}
-ggplot(plastic_waste,aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth = 0.2) + facet_wrap( ~ continent )
+ggplot(plastic_waste,aes(x = plastic_waste_per_cap)) + geom_histogram(binwidth = 0.2) + facet_wrap( ~ continent ) +labs(title = "Quantité de déchets plastiques par habitant",
+       subtitle = "Selon le continent",
+       x = "Quantité de déchets plastiques par habitant", y = "Compte")
 ```
 En comparant les continents selon leur quantité déchets plastiques, il est possible de constater que l'Amérique du Sud et l'Océanie sont les continents qui en possèdent le moins.
  
 ### Exercise 2
 
 ```{r plastic-waste-density}
- ggplot(plastic_waste,aes(x = plastic_waste_per_cap, colour=continent, fill=continent))+ geom_density (alpha=0.4)
+ ggplot(plastic_waste,aes(x = plastic_waste_per_cap, colour=continent, fill=continent))+ geom_density (alpha=0.4) +labs(title = "Quantité de déchets plastiques par habitant",
+       subtitle = "Selon le continent",
+       x = "Quantité de déchets plastiques par habitant", y = "Densité")
 
 ```
 
@@ -47,14 +51,18 @@ Boxplot:
 
 ```{r plastic-waste-boxplot}
 ggplot(plastic_waste, aes(x = continent, y=plastic_waste_per_cap)) +
-  geom_boxplot()
+  geom_boxplot() +labs(title = "Quantité de déchets plastiques par habitant",
+       subtitle = "Selon le continent",
+       x = "Continent", y = "Quantité de déchets plastiques par habitant")
 ```
 
 Violin plot:
 
 ```{r plastic-waste-violin}
 ggplot(plastic_waste, aes(x = continent, y=plastic_waste_per_cap)) +
-  geom_violin()
+  geom_violin() + labs(title = "Quantité de déchets plastiques par habitant",
+       subtitle = "Selon le continent",
+       x = "Continent", y = "Quantité de déchets plastiques par habitant")
 ```
 
 Les violin plots permettent de mieux voir la distribution des données et sont plus précis qu'un simple boxplot.
@@ -63,7 +71,9 @@ Les violin plots permettent de mieux voir la distribution des données et sont p
 
 
 ```{r plastic-waste-mismanaged}
-ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=mismanaged_plastic_waste_per_cap, color=continent)) +  geom_point()
+ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=mismanaged_plastic_waste_per_cap, color=continent)) +  geom_point() + labs(title = "Gestion de la quantité de déchets plastiques par habitant",
+       subtitle = "Selon le continent",
+       x = "Quantité de déchets plastiques par habitant", y = "Quantité de déchets plastiques non gérés par habitant")
 
 ```
 
@@ -73,14 +83,16 @@ En général, plus il y a de déchets émis par les habitants, plus la quantité
 
 
 ```{r plastic-waste-population-total}
-ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=total_pop)) +  geom_point()
+ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=total_pop)) +  geom_point() + labs(title = "Quantité de déchets plastiques par habitant pour la population totale",
+       x = "Quantité de déchets plastiques par habitant", y = "Population totale")
 ```
 
 ```{r plastic-waste-population-coastal}
-ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=coastal_pop)) +  geom_point()
+ggplot(plastic_waste,aes(x=plastic_waste_per_cap, y=coastal_pop)) +  geom_point() + labs(title = "Quantité de déchets plastiques par habitant pour la population côtière",
+       x = "Quantité de déchets plastiques par habitant", y = "Population côtière")
 ```
 
-Il semble y avoir une relation plus forte entre la quantité de déchets plastiques par habitant et le nombre total d'habitants, puisque les points sont plus rapprochés et semblent suivre une certaine tendance.
+Il semble y avoir une relation plus forte entre la quantité de déchets plastiques par habitant et le nombre total d'habitants, puisque les points sont plus rapprochés et semblent suivre une certaine tendance. De plus, les pays avec une population côtière ont moins de déchets plastiques.
 
 ## Conclusion
 
